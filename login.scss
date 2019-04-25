@@ -1,0 +1,49 @@
+@import "./common";
+@import "@material/textfield/mdc-text-field";
+@import "@material/button/mdc-button";
+
+.header {
+  text-align: center;
+}
+
+.main-logo {
+  width: 250px;
+  height: 250px;
+  padding-top: 80px;
+  fill: currentColor;
+  align: center;
+}
+
+.username,
+.password {
+  &:not(.mdc-text-field--invalid) {
+    @include mdc-text-field-label-color(on-primary);
+  }
+  &.mdc-text-field--focused:not(.mdc-text-field--invalid)  {
+    @include mdc-text-field-label-color(on-primary);
+  }
+
+  display: block;
+  width: 300px;
+  margin: 20px auto;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 300px;
+  margin: auto;
+}
+
+.button-container button {
+  margin: 3px;
+}
+
+.main-login {
+  background-color: $mdc-theme-background;
+  color: $mdc-theme-on-background;
+}
+
+.cancel {
+  @include mdc-button-ink-color(on-primary);
+}

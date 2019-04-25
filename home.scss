@@ -1,0 +1,79 @@
+@import "./common";
+@import "@material/drawer/mdc-drawer";
+@import "@material/list/mdc-list";
+@import "@material/image-list/mdc-image-list";
+@import "@material/ripple/mixins";
+@import "@material/typography/mdc-typography";
+@import "@material/elevation/mdc-elevation";
+@import "@material/top-app-bar/mdc-top-app-bar";
+@import "@material/card/mdc-card";
+
+
+.home {
+  display: flex; // Flexbox is used to easily arrange the persistent drawer and content side-by-side
+}
+
+.main-logo-drawer {
+  display: block;
+  width: 48px;
+  padding: 40px 0 0;
+  margin: 0 auto;
+  fill: currentColor;
+}
+
+.main-title {
+  @include mdc-typography(headline6);
+
+  text-align: center;
+  margin: 5px auto;
+}
+
+.things-list {
+  @include mdc-image-list-masonry-columns(4);
+
+  overflow: auto;
+  padding: 80px 100px 0;
+  
+}
+
+.mdc-card {
+  height: 350px;
+  width: 350px;
+}
+
+.mdc-drawer {
+  @include mdc-drawer-item-activated-icon-ink-color(on-primary);
+  @include mdc-drawer-item-activated-text-ink-color(on-primary);
+  @include mdc-drawer-activated-overlay-color(primary);
+  
+  .mdc-list {
+   margin: 5px 5px auto 5px;
+  }
+
+  .mdc-list-item {
+   border-radius: 6px;
+  }
+  
+}
+
+.main-select-item-divider {
+  display: block;
+  border-bottom-color: #EAA4A4;
+  border-bottom-width: 2px;
+  width: 50px;
+  position: relative;
+}
+
+// This needs 2-class specificity to override MDC Drawer styles
+.mdc-drawer .main-select-item-divider {
+  margin: 0 auto;
+}
+
+.main-logo {
+  width: 150px;
+  height: 150px;
+  align: center;
+}
+
+
+
